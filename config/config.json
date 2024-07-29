@@ -1,0 +1,11 @@
+{
+    "development": {
+      "username": "postgres",
+      "password": "seraserasera3",
+      "database": "postgres",
+      "host": "db-postgress.cfyuwdv7dqod.us-east-1.rds.amazonaws.com",
+      "port": "5432",
+      "dialect": "postgres"
+    }
+  }
+  
