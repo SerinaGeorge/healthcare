@@ -2,16 +2,17 @@ const express = require('express');
 const AWS = require('aws-sdk');
 const { config } = require('process');
 const app = express();
+const router = express.Router();
 
 
 app.use(express.json());
 
 const creds = new AWS.SharedIniFileCredentials({profile:'default'});
 const sns = new AWS.SNS({creds,region:'us-east-1'});
-app.get('/status',(req, res) => res.send({status: 'ok',sns}))
+router.get('/status',(req, res) => res.send({status: 'ok',sns}))
 
 
-app.post('/subscribe',(req,res) => {
+router.post('/subscribe',(req,res) => {
     let params = {
         
         Protocol: "SMS", 
@@ -24,7 +25,7 @@ app.post('/subscribe',(req,res) => {
             res.send(data)
     })
 });
-app.post('/publish',(req,res) => {
+router.post('/publish',(req,res) => {
     let params = {
         
         
@@ -39,8 +40,8 @@ app.post('/publish',(req,res) => {
 
     })
 
-const port = 3000;
+/* const port = 3000;
 app.listen(port,()=> {
     console.log('SNS app listening on port');
-})
+}) */
 module.exports = router;
