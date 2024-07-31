@@ -2,6 +2,7 @@ const express = require('express');
 const { Sequelize, DataTypes } = require('sequelize');
 const patientRoutes = require('./routes/patients');
 const appointmentRoutes = require('./routes/appointments');
+const snsRoutes = require('./routes/sns');
 const app = express();
 const port = 3000;
 
