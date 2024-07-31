@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
     dateOfBirth: {
-      type: DataTypes.STRING,
+      type: DataTypes.DATE,
       allowNull: false,
     }
   }, {});

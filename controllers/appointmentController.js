@@ -1,8 +1,10 @@
 const { Appointment, Patient } = require('../models');
+const s3Controller = require('../controllers/s3Controller');
 
 exports.createAppointment = async (req, res) => {
   try {
     const appointment = await Appointment.create(req.body);
+    s3Controller.uploadJsonToS3(appointment,"healthcaredata/appointments/appointment-id-"+appointment.id+".json");
     res.status(201).json(appointment);
   } catch (error) {
     res.status(400).json({ error: error.message });
