@@ -4,7 +4,9 @@ const appointmentController = require('../controllers/appointmentController');
 
 router.post('/', appointmentController.createAppointment);
 router.get('/', appointmentController.getAllAppointments);
-router.put('/:id', appointmentController.updateAppointment);
+console.log(appointmentController.getAllAppointmentsbyPatientId);
+router.get('/:patientId',appointmentController.getAllAppointmentsbyPatientId);
+//router.put('/:id', appointmentController.updateAppointment);
 router.delete('/:id', appointmentController.deleteAppointment);
 
 module.exports = router;

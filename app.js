@@ -25,6 +25,10 @@ const Patient = sequelize.define('Patient', {
   dateOfBirth: {
     type: DataTypes.DATE,
     allowNull: false
+  },
+  address:{
+    type: DataTypes.STRING,
+    allowNull: false
   }
 
 }, {
@@ -32,12 +36,11 @@ const Patient = sequelize.define('Patient', {
 });
 
 const Appointment = sequelize.define('Appointment', {
-  date: {
-    type: DataTypes.DATE,
-    allowNull: false
+  reason_for_visit: {
+    type: DataTypes.STRING
   },
-  time: {
-    type: DataTypes.TIME,
+  appointment_time: {
+    type: DataTypes.JSON,
     allowNull: false
   },
   patientId: {

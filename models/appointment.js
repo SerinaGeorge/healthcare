@@ -1,12 +1,11 @@
 module.exports = (sequelize, DataTypes) => {
     const Appointment = sequelize.define('Appointment', {
-      date: {
-        type: DataTypes.DATE,
-        allowNull: false,
+      reason_for_visit: {
+        type: DataTypes.STRING
       },
-      time: {
-        type: DataTypes.TIME,
-        allowNull: false,
+      appointment_time: {
+        type: DataTypes.JSON,
+        allowNull: false
       }
     }, {});
     
