@@ -4,7 +4,7 @@ const patientRoutes = require('./routes/patients');
 const appointmentRoutes = require('./routes/appointments');
 const snsRoutes = require('./routes/sns');
 const app = express();
-const port = 3000;
+const port = 2000;
 
 app.use(express.json());
 
