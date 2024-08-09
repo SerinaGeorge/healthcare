@@ -33,5 +33,7 @@ jobs:
         key: ${{ secrets.SSH_KEY_DEV }}
         port: ${{ env.PORT }}
         script: |
-          ls -la
-          pwd
+          cd /home/ec2-user/api/healthcare
+          git checkout main
+          git pull
+          pm2 restart healthcare-dev
