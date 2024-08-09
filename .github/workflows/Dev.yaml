@@ -16,7 +16,7 @@ permissions:
       contents: read
 
 jobs:
-  Build-Deploy:
+  Build-Deploy-Dev:
     runs-on: ubuntu-latest
 
     steps:
@@ -33,4 +33,5 @@ jobs:
         key: ${{ secrets.SSH_KEY_DEV }}
         port: ${{ env.PORT }}
         script: |
-          echo "========================================================================"
+          ls -la
+          pwd
